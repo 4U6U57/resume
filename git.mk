@@ -2,7 +2,7 @@
 # cmps111 git.mk
 # August Valera <avalera>
 
-pull : spotless
+pull : clean
 	git $@ origin master
 
 add : pull
