@@ -1,6 +1,11 @@
 \documentclass[11pt]{article}
 
-\usepackage[papersize={8.5in,11in},margin=1in]{geometry}
+\usepackage[papersize={8.5in,11in},margin=1in]{geometry} % sets size
+\usepackage{titlesec} % for below
+\titlespacing\section{0pt}{\parskip}{-\parskip} % disables break after section titles
+\usepackage{parskip} % disables indentation
+\usepackage[none]{hyphenat} % disables splitting words
+\usepackage{attachfile} % attaches source code
 
 \begin{document}
 
@@ -20,29 +25,46 @@
 To obtain an intership and gain working experience while pursuing a degree in Computer Engineering at UC Santa Cruz.
 
 \section*{Education}
-High School Graduate at Westmoor High School in Daly City, CA\\
-B.S. in Computer Engineering, University of California - Santa Cruz, anticipated June 2017\\
-GPA: 3.67 (as of Spring '15)
+\begin{description} 
+  \itemsep0pt \parskip0pt
+  \item[High School Graduate] at Westmoor High School in Daly City, CA
+  \item[B.S. in Computer Engineering] at University of California - Santa Cruz, anticipated June 2017
+  \item[GPA] of 3.64 (as of Fall 2015)  
+\end{description}
 
 \section*{Relevant Coursework}
-\begin{description} \itemsep0pt \parskip0pt
+\begin{description} 
+  \itemsep0pt \parskip0pt
   \item[CMPE 13/L] Computer Systems and C Programming
   \item[CMPS 12B/M] Data Structures
-  \item[CMPS 101] Algorithms
+  \item[CMPS 101] Abstract Data Types
+  \item[CMPS 112] Comparative Programming Languages
 \end{description}
 
 \section*{Experience}
-Self-employed consultant\\
-Novice App/Web Developer\\
-Teaching Assistant (Undergraduate) - CS Department, UCSC - April 2015 to present
+% Add long format description to experience
+\begin{description}
+  \itemsep0pt \parskip0pt
+  \item[Teaching Assistant (Undergraduate)] for CS Department, UCSC - April 2015 to present
+  \item[Orientation Leader] for Crown College, UCSC
+\end{description}
+
 
 \section*{Skills}
-% Put skills here later
+\begin{description} 
+  \itemsep0pt \parskip0pt
+  \item[Languages/Technologies] Proficient: \{C, Git, Java\}; Familiar with: \{Bash, HTML, MATLAB, Perl\}; Exposure to: \{Javascript/jQuery, Python\}
+\end{description}
 
 \section*{Interests}
 Student Government
 
 \section*{Awards and Achievements}
-Dean's List - Fall 2013 to Spring 2014, Spring 2015
+\begin{description}
+  \itemsep0pt \parskip0pt
+  \item[Dean's List] Fall 2013 to Spring 2014, Spring 2015
+\end{description}
+
+\LaTeX\expandafter\attachfile\expandafter{\jobname.tex}
 
 \end{document}

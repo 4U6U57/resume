@@ -1,6 +1,6 @@
 SOURCE=*.tex
 OUTPUT=${SOURCE:.tex=.pdf}
-OBJECT=${SOURCE:.tex=.aux} ${SOURCE:.tex=.log}
+OBJECT=${SOURCE:.tex=.aux} ${SOURCE:.tex=.log} ${SOURCE:.tex=.out}
 
 all : ${OUTPUT}
 
@@ -10,19 +10,9 @@ all : ${OUTPUT}
 clean : 
 	rm -f ${OBJECT}
 
-# Git
-commit : ${SOURCE} clean pull
-	git add --all
-	git $@
+spotless : clean
+	rm -f ${OUTPUT}
 
-push : commit
-	git $@ origin master
-	make log
-	
-pull :
-	git $@ origin master
+include git.mk
 
-log :
-	git $@ --graph --oneline -10
-
-.PHONY : all clean commit push pull log
+.PHONY : all clean spotless
