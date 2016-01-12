@@ -1,9 +1,12 @@
 \documentclass[11pt]{article}
 
 \usepackage[papersize={8.5in,11in},margin=1in]{geometry} % sets size
-\usepackage{titlesec} % for below
-\titlespacing\section{0pt}{\parskip}{-\parskip} % disables break after section titles
+\usepackage{titlesec} % disables break after section titles
+\titlespacing\section{0pt}{\parskip}{-\parskip}
 \usepackage{parskip} % disables indentation
+\usepackage{enumitem}
+\setlist[description]{leftmargin=*} % disables indentation for lists
+\setlist[itemize]{leftmargin=*}
 \usepackage[none]{hyphenat} % disables splitting words
 \usepackage{attachfile} % attaches source code
 
@@ -46,7 +49,18 @@ To obtain an intership and gain working experience while pursuing a degree in Co
 \begin{description}
   \itemsep0pt \parskip0pt
   \item[Teaching Assistant (Undergraduate)] for CS Department, UCSC - April 2015 to present
-  \item[Orientation Leader] for Crown College, UCSC
+    \begin{itemize}
+      \itemsep0pt \parskip0pt
+      \item Classes: {CMPS 5J Java Programming, CMPS 10 Intro Programming, CMPS 12B Data Structures}
+      \item Independently facilitated official lab sections, assisting students in coursework, holding lectures
+      \item Graded assignments and exams
+      \item Wrote scripts (in C, bash, csh, perl) to automate grading assignments
+    \end{itemize}
+  \item[Orientation Leader] for Crown College, UCSC 
+    \begin{itemize}
+      \itemsep0pt \parskip0pt
+      \item 
+    \end{itemize}
 \end{description}
 
 
@@ -54,6 +68,7 @@ To obtain an intership and gain working experience while pursuing a degree in Co
 \begin{description} 
   \itemsep0pt \parskip0pt
   \item[Languages/Technologies] Proficient: \{C, Git, Java\}; Familiar with: \{Bash, HTML, MATLAB, Perl\}; Exposure to: \{Javascript/jQuery, Python\}
+% Add more skills
 \end{description}
 
 \section*{Interests}
