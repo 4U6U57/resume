@@ -1,6 +1,12 @@
 \documentclass[11pt]{article}
 
-\usepackage[papersize={8.5in,11in},margin=1in]{geometry} % sets size
+\usepackage{geometry} % sets size
+\geometry{
+	letterpaper,
+	margin=1in,
+	tmargin=1.5in,
+	headsep=0.5in
+}
 \usepackage{titlesec} % disables break after section titles
 \titlespacing\section{0pt}{\parskip}{-\parskip}
 \usepackage{parskip} % disables indentation
@@ -9,25 +15,26 @@
 \setlist[itemize]{leftmargin=*}
 \usepackage[none]{hyphenat} % disables splitting words
 \usepackage{attachfile} % attaches source code
+\usepackage{fancyheadings} % headings and footers
+\pagestyle{fancy}
+\lhead{\huge August Valera}
+\rhead{
+	\small
+	+1 (616) 284-1018 --- \url{avalera@ucsc.edu}\\
+	1010 Pacific Ave. \# 212, Santa Cruz, CA 95060 \\
+	\url{http://linkedin.com/in/AugustValera}
+}
+\lfoot{
+	\small Compiled \today, latest at 
+	\url{http://bitbucket.org/4U6U57/resume/raw/HEAD/resume.pdf}
+}
+\renewcommand{\footrulewidth}{0.4pt} % footer line
+\usepackage[yyyymmdd]{datetime} % date for footer in ISO
+\renewcommand{\dateseparator}{--}
 
 \begin{document}
 
 \pagenumbering{gobble}
-
-\centerline{
-	\LARGE
-	August Valera
-}
-\centerline{
-	+1 (616) 284-1018 --- 
-	1010 Pacific Ave. \#212 
-	Santa Cruz, CA 95060
-}
-\centerline{
-	\url{avalera@ucsc.edu} ---
-	\url{linkedin.com/in/AugustValera}
-}
-\hrulefill
 
 % Commented out for career fair
 %\section*{Objective}
@@ -55,7 +62,6 @@
 \end{description}
 
 \section*{Experience}
-% Add long format description to experience
 \begin{description}
 	\itemsep0pt \parskip0pt
 	\item[Teaching Assistant (Undergraduate)] for CS Department, UCSC --- 
@@ -93,17 +99,18 @@
 	\itemsep0pt \parskip0pt
 	\item[Student Government] University of California, Santa Cruz
 		\begin{itemize}
-		\itemsep0pt \parskip0pt
-		\item Elected Representative at Student Union Assembly ---
-			\textit{2015--present}
-		\item Senator at Crown Student Senate --- \textit{2013--present}
-		\item Chair at Crown Student Activities Committee --- \textit{2014--present}
-	\end{itemize}
-\item[Affiliations] Misc. Organizations
-	\begin{itemize}
-		\item Circle K International
-		\item Society of Asian Scientists and Engineers (SASE)
-	\end{itemize}
+			\itemsep0pt \parskip0pt
+			\item Elected Representative at Student Union Assembly ---
+				\textit{2015--present}
+			\item Senator at Crown Student Senate --- \textit{2013--present}
+			\item Chair at Crown Student Activities Committee --- 
+				\textit{2014--present}
+		\end{itemize}
+	\item[Affiliations] Misc. Organizations
+		\begin{itemize}
+			\item Circle K International
+			\item Society of Asian Scientists and Engineers (SASE)
+		\end{itemize}
 \end{description}
 
 \section*{Awards and Achievements}
@@ -113,7 +120,5 @@
 	\item[Certificate of Appreciation] as a Student Volunteer, Crown College --- 
 		\textit{2013--present}
 \end{description}
-
-%\smallskip\LaTeX\expandafter\attachfile\expandafter{\jobname.tex}
 
 \end{document}
