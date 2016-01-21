@@ -15,4 +15,7 @@ spotless : clean
 
 include git.mk
 
+test : ${OUTPUT} clean
+	cygstart $<
+
 .PHONY : all clean spotless
