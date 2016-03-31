@@ -1,11 +1,10 @@
 # Makefile for easy git stuff
-# cmps111 git.mk
 # August Valera <avalera>
 
-pull : clean
-	git $@ origin master
+pull :
+	git $@
 
-add : pull
+add : pull clean
 	git $@ --all
 
 commit : add
@@ -15,7 +14,7 @@ push : commit
 	git $@ origin master
 	make log
 
-log :
+log : pull
 	git $@ --graph --oneline -10
 
 .PHONY : pull add commit push log
