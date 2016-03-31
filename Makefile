@@ -1,6 +1,6 @@
 SOURCE=*.tex
 OUTPUT=${SOURCE:.tex=.pdf}
-OBJECT=${SOURCE:.tex=.aux} ${SOURCE:.tex=.log}
+OBJECT=${SOURCE:.tex=.aux} ${SOURCE:.tex=.log} ${SOURCE:.tex=.out}
 
 all : ${OUTPUT}
 
