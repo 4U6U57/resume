@@ -1,11 +1,15 @@
 \documentclass[11pt]{article}
+\author{August Valera}
 
+\usepackage{fullpage, lmodern, hyperref}
+%\usepackage[sfdefault]{roboto} % eventually, but it's hard
 \usepackage{geometry} % sets size
 \geometry{
-	letterpaper,
-	margin=1in,
-	tmargin=1.5in,
-	headsep=0.5in
+  letterpaper,
+  margin=1in,
+  tmargin=1.5in,
+  headsep=0.25in,
+  headheight=1in,
 }
 \usepackage{titlesec} % disables break after section titles
 \titlespacing\section{0pt}{\parskip}{-\parskip}
@@ -15,20 +19,21 @@
 \setlist[itemize]{leftmargin=*}
 \usepackage[none]{hyphenat} % disables splitting words
 \usepackage{attachfile} % attaches source code
-\usepackage{fancyheadings} % headings and footers
+\usepackage{fancyhdr} % headings and footers
+\renewcommand{\footrulewidth}{0.4pt}
 \pagestyle{fancy}
-\lhead{\huge August Valera}
-\rhead{
-	\small
-	+1 (616) 284-1018 --- \url{avalera@ucsc.edu}\\
-	1010 Pacific Ave. \# 212, Santa Cruz, CA 95060 \\
-	\url{http://linkedin.com/in/AugustValera}
+\fancyhead{}
+\fancyhead[L]{\huge August Valera}
+\fancyhead[R]{
+  \small
+  \url{avalera@ucsc.edu} --- +1 (616) 284-1018 \\
+  1010 Pacific Ave. \# 212, Santa Cruz, CA 95060 \\
+  \url{http://linkedin.com/in/AugustValera}
 }
-\lfoot{
-	\small Compiled \textit{\today} with {\LaTeX}, latest 
-	\url{http://bitbucket.org/4U6U57/resume/raw/HEAD/resume.pdf}
+\fancyfoot[L]{
+  \small Compiled \textit{\today} with {\LaTeX}, latest
+  \url{http://bitbucket.org/4U6U57/resume/raw/HEAD/resume.pdf}
 }
-\renewcommand{\footrulewidth}{0.4pt} % footer line
 \usepackage[yyyymmdd]{datetime} % date for footer in ISO
 \renewcommand{\dateseparator}{--}
 
@@ -38,91 +43,93 @@
 
 % Commented out for career fair
 %\section*{Objective}
-%To obtain an intership and gain working experience while pursuing a degree in 
+%To obtain an intership and gain working experience while pursuing a degree in
 %Computer Engineering at UC Santa Cruz.
 
 \section*{Education}
-\begin{description} 
-	\itemsep0pt \parskip0pt
-	\item[High School Graduate] at Westmoor High School in Daly City, CA
-	\item[B.S, Computer Engineering] at University of California, Santa Cruz 
-		--- \textit{anticipated June 2017}
-	\item[GPA] of 3.64 --- \textit{as of Fall 2015 quarter}  
+\begin{description}
+  \itemsep0pt \parskip0pt
+  \item[High School Graduate] at Westmoor High School in Daly City, CA
+  \item[Bachelor of Science, Computer Engineering] at University of California,
+    Santa Cruz \\ --- \textit{anticipated June 2017}
+  \item[GPA] of 3.67 --- \textit{as of Winter 2016 quarter}
 \end{description}
 
 \section*{Relevant Coursework}
-\begin{description} 
-	\itemsep0pt \parskip0pt
-	\item[CMPE 13/L] Computer Systems and C Programming
-	\item[CMPE 150] Computer Networking
-	\item[CMPS 12B/M] Data Structures
-	\item[CMPS 101] Abstract Data Types
-	\item[CMPS 112] Comparative Programming Languages
-	\item[CMPS 121] Mobile Applications (Android)
+\begin{description}
+  \itemsep0pt \parskip0pt
+  %\item[CMPE 13/L] Computer Systems and C Programming
+  %\item[CMPE 150] Computer Networking
+  %\item[CMPS 101] Abstract Data Types
+  \item[CMPS 102] Advanced Algorithm Analysis
+  %\item[CMPS 111] Operating Systems
+  \item[CMPS 121] Mobile Applications (Android)
+\end{description}
+
+\section*{Skills}
+\begin{description}
+  \itemsep0pt \parskip0pt
+  \item JavaScript framework experience: \{AngularJS, jQuery\}
+  \item Webapp development experience: \{HTML/CSS/JS\} (see Hackathon project
+    under \textbf{Experience})
+  \item Extensive debugging experience, as a collegiate Computer Science
+    teaching assistant
+  \item[Languages] Proficient: \{C, Java, Bash, LaTeX, MATLAB\};
+    Familiar: \{JavaScript, Perl, Python\}
+  \item[Fields] Shell Scripting \{csh, Bash\}, Android App Development, Web Design
+    \{AngularJS, Firebase\}
+  \item[Tools] Git \{Bitbucket/GitHub\}, Vim, Cygwin, Ubuntu, VirtualBox
 \end{description}
 
 \section*{Experience}
 \begin{description}
-	\itemsep0pt \parskip0pt
-	\item[Teaching Assistant (Undergraduate)] for CS Department, UCSC --- 
-		\textit{April 2015--present}
-		\begin{itemize}
-			\itemsep0pt \parskip0pt
-			\item \textbf{Classes} 
-				\{\textbf{CMPS 5J} Java Programming, 
-					\textbf{CMPS 10} Programming, 
-					\textbf{CMPS 12B} Data Structures\}
-			\item Independently facilitated official lab sections, assisting students 
-				in coursework, holding lectures
-			\item Graded assignments and exams
-			\item Wrote scripts (in C, bash, csh, perl) to automate grading 
-				assignments
-		\end{itemize}
-	\item[Orientation Leader] for Crown College, UCSC (Unpaid Position) --- 
-		\textit{Fall 2015}
-		\begin{itemize}
-			\itemsep0pt \parskip0pt
-			\item Facilitated Welcome Week at UC Santa Cruz
-			\item Managed a team of peers
-		\end{itemize}
-\end{description}
-
-
-\section*{Skills}
-\begin{description} 
-	\itemsep0pt \parskip0pt
-	\item[Languages/Technologies] Proficient: \{C, Git, Java\}; 
-		Familiar with: \{Bash, LaTeX, MATLAB\}; 
-		Exposure to: \{HTML, Javascript/jQuery, Perl, Python\}
-	\item[Fields] Android App Development, Shell Scripting, Web Design
-	\item[Tools] Bitbucket, Cygwin, Ubuntu, Vim, VirtualBox
-\end{description}
-
-\section*{Interests}
-\begin{description}
-	\itemsep0pt \parskip0pt
-	\item[Student Government] University of California, Santa Cruz
-		\begin{itemize}
-			\itemsep0pt \parskip0pt
-			\item \textbf{Elected Representative} at Student Union Assembly ---
-				\textit{2015--present}
-			\item \textbf{Senator} at Crown Student Senate --- \textit{2013--present}
-			\item \textbf{Chair} at Crown Student Activities Committee --- 
-				\textit{2014--present}
-		\end{itemize}
-	\item[Affiliations] Misc. Organizations
-		\begin{itemize}
-			\item \textbf{Member} of Circle K International
-			\item \textbf{Member} of Society of Asian Scientists and Engineers (SASE)
-		\end{itemize}
+  \itemsep0pt \parskip0pt
+  \item[Teaching Assistant (Undergraduate)] for CS Department, UCSC ---
+    \textit{April 2015--present}
+    \begin{itemize}
+      \itemsep0pt \parskip0pt
+      \item \textbf{Classes}: Intro Programming (Processing), Java Programming, Data Structures
+      \item Independently facilitated lab sections of up to $30$ students,
+        lectured, tutored individually and in groups
+      \item Graded programming assignments and exams
+      \item Wrote scripts (in csh, C, and Bash) to automate portions of
+        assignments
+    \end{itemize}
+  \item[Hackathon Participant] HACK UCSC --- \textit{Jan 2016}
+    \begin{itemize}
+      \item Lead engineer for designing webapp for a microcontroller garden
+        monitor
+      \item Experience in AngularJS/Bootstrap, configuring backend with REST
+        APIs (Firebase), and writing server backend (Python) to upload data
+      \item Devpost of Project:
+        \url{http://devpost.com/software/autonomous-garden-controller}
+    \end{itemize}
 \end{description}
 
 \section*{Awards and Achievements}
 \begin{description}
-	\itemsep0pt \parskip0pt
-	\item[Dean's List] --- \textit{Fall 2013--Spring 2014, Spring 2015}
-	\item[Certificate of Appreciation] as a Student Volunteer, Crown College --- 
-		\textit{2013--present}
+  \itemsep0pt \parskip0pt
+  \item[Dean's List] --- \textit{Fall 2013--Spring 2014, Spring 2015}
+\end{description}
+
+\section*{Interests}
+\begin{description}
+  \itemsep0pt \parskip0pt
+  \item[Student Government] University of California, Santa Cruz
+    \begin{itemize}
+      \itemsep0pt \parskip0pt
+      \item \textbf{Elected Representative} at Student Union Assembly ---
+        \textit{2015--present}
+      \item \textbf{Senator} at Crown Student Senate --- \textit{2013--present}
+      \item \textbf{Chair} at Crown Student Activities Committee ---
+        \textit{2014--present}
+    \end{itemize}
+  \item[Organizations] Misc. Affiliations
+    \begin{itemize}
+      \item \textbf{Member} of Association of Computing Machinery (ACM)
+      \item \textbf{Member} of Circle K International (CKI)
+      \item \textbf{Member} of Society of Asian Scientists and Engineers (SASE)
+    \end{itemize}
 \end{description}
 
 \end{document}
