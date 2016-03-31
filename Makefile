@@ -5,8 +5,8 @@ OBJECT=${SOURCE:.tex=.aux} ${SOURCE:.tex=.log} ${SOURCE:.tex=.out}
 all : ${OUTPUT}
 
 %.pdf : %.tex
-	pdflatex $<
-	pdflatex $<
+	pdflatex $^
+	pdflatex $^
 
 clean : 
 	rm -f ${OBJECT}
@@ -19,13 +19,13 @@ include git.mk
 submit : ${OUTPUT} clean push
 
 edit : ${SOURCE}
-	vim $<
+	vim $^
 
 open : ${OUTPUT} clean
 ifeq ($(shell uname -o),Cygwin)
-	cygstart $<
+	cygstart $^
 else
-	open $<
+	open $^
 endif
 
 test : edit
