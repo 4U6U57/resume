@@ -19,13 +19,13 @@ include git.mk
 submit : ${OUTPUT} clean push
 
 edit : ${SOURCE}
-	vim $^
+	vim -p $^
 
 open : ${OUTPUT} clean
 ifeq ($(shell uname -o),Cygwin)
-	cygstart $^
+	cygstart $<
 else
-	open $^
+	open $<
 endif
 
 test : edit
