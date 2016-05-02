@@ -19,7 +19,7 @@ include git.mk
 submit : ${OUTPUT} clean push
 
 edit : ${SOURCE}
-	vim -p $^
+	vim $^
 
 open : ${OUTPUT} clean
 ifeq ($(shell uname -o),Cygwin)
