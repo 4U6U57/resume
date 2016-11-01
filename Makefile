@@ -5,8 +5,8 @@ OBJECT=${SOURCE:.tex=.aux} ${SOURCE:.tex=.log} ${SOURCE:.tex=.out}
 all : ${OUTPUT}
 
 %.pdf : %.tex
-	pdflatex $<
-	pdflatex $<
+	pdflatex -interaction=nonstopmode -halt-on-error $<
+	pdflatex -interaction=nonstopmode -halt-on-error $<
 
 clean : 
 	rm -f ${OBJECT}
@@ -30,5 +30,7 @@ endif
 
 test : edit
 	make open
+
+ci : spotless push
 
 .PHONY : all clean spotless edit open test

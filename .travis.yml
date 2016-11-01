@@ -1,0 +1,16 @@
+sudo: required
+dist: trusty
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+script:
+- mkdir _build
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build resume.tex
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build resume.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: d0gKQ+BImYBI30uHJwxlcX75JrWzPb7JU186ZaFMN5yLORFvdoshnWII2Ieu9s7LRhs3jZBk2vaqb9tno9RGzFqbk+8SJn7K+oi9YzKaQaDvAghr4cr3s3xcMQYO+Jkpf9td/b+z3uxsRB/jMd09Bie2O2qfCceWFqDG7df76plBg+I61acxOST96Zty/shIUXO5bVQSjbzuIoel+H7qtLtvvB6OphYlXe+wtWBCsDSPE6XE7A/1QKAK2Pm9iACN91d4WO2b3i21m1vmMMZEhf+m5TSJOxs9WPbAPuCetj3gY75IpYNVQ81jXaHxlDA3sOaF2epzNzfLINqP9sjP74qpOD6l2xqgrWXTCaR/X6qiSdt16TKpKzX7WZgl7+B7AbeP5VGwCzhe7KNugV0X9btC6L+a0W4OLh/W7qCGdb19N+RRegeGm16V7wvCiOwrLi2qSAi1WTrH6kjmVUqgPFPHQhxkb4YyZq6l1bgRlndXGoMbBlrR/WYet7RWrFErtIoSvj57I/Tx5hmfOEJ+sHR12APsmm7iPyECgEHZjBxPDIfUdk5DWZ/XBnYnENmHPOBBepX6tbMiQDpr1h2SEQ5QTP7cmIGfgh58knLBaYJLquoca5XmPgLG0ExlS7Xf1TWdh0MSfktsK/LpvaHqWjEOgjLpwRAgFTByyq+02Ec=
+  file: _build/resume.pdf
+  on:
+    repo: 4U6U57/resume
