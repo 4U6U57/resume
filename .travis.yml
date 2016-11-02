@@ -14,3 +14,4 @@ deploy:
    on:
       repo: 4U6U57/resume
    skip-cleanup: true
+   overwrite: true
