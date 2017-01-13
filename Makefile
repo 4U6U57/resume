@@ -16,16 +16,16 @@ spotless : clean
 
 include git.mk
 
-submit : ${OUTPUT} clean push
+ci : ${OUTPUT} spotless push
 
 edit : ${SOURCE}
-	vim $<
+	${EDITOR} $<
 
 open : ${OUTPUT} clean
 ifeq ($(shell uname -o),Cygwin)
 	cygstart $<
 else
-	open $<
+	xdg-open $<
 endif
 
 test : edit

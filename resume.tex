@@ -12,7 +12,8 @@
    headheight=1in,
 }
 \usepackage{titlesec} % disables break after section titles
-\titlespacing\section{0pt}{\parskip}{-\parskip}
+\titlespacing{\section}{0pt}{-\parskip}{0pt}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
 \usepackage{parskip} % disables indentation
 \usepackage{enumitem}
 \setlist[description]{leftmargin=*} % disables indentation for lists
