@@ -13,5 +13,6 @@ deploy:
    file: resume.pdf
    on:
       repo: 4U6U57/resume
+      branch: master
    skip-cleanup: true
    overwrite: true

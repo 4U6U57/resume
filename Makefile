@@ -2,35 +2,31 @@ SOURCE=*.tex
 OUTPUT=${SOURCE:.tex=.pdf}
 OBJECT=${SOURCE:.tex=.aux} ${SOURCE:.tex=.log} ${SOURCE:.tex=.out}
 
-all : ${OUTPUT}
+all: ${OUTPUT}
 
-%.pdf : %.tex
+%.pdf: %.tex
 	pdflatex -interaction=nonstopmode -halt-on-error $<
 	pdflatex -interaction=nonstopmode -halt-on-error $<
 
-clean : 
+clean: 
 	rm -f ${OBJECT}
 
-spotless : clean
+spotless: clean
 	rm -f ${OUTPUT}
 
-include git.mk
+ci: spotless
+	git commit -av
+	git push
 
-ci : ${OUTPUT} spotless push
-
-edit : ${SOURCE}
+edit: ${SOURCE}
 	${EDITOR} $<
+	make open
 
-open : ${OUTPUT} clean
+open: ${OUTPUT} clean
 ifeq ($(shell uname -o),Cygwin)
 	cygstart $<
 else
 	xdg-open $<
 endif
 
-test : edit
-	make open
-
-ci : spotless push
-
-.PHONY : all clean spotless edit open test
+.PHONY: all clean spotless edit open test
