@@ -1,39 +1,48 @@
 \documentclass[11pt]{article}
 \author{August Valera}
 
-\usepackage{fullpage, lmodern, hyperref}
-%\usepackage[sfdefault]{roboto} % eventually, but it's hard
+\usepackage{fullpage, hyperref}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{geometry} % sets size
 \geometry{
-   letterpaper,
-   margin=1in,
-   tmargin=1.5in,
-   headsep=0.25in,
-   headheight=1in,
+  letterpaper,
+  margin=1in,
+  tmargin=1.3in,
+  headsep=0.2in,
+  headheight=1in,
 }
 \usepackage{titlesec} % disables break after section titles
-\titlespacing{\section}{0pt}{-\parskip}{0pt}
-\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+\titlespacing{\section}{0pt}{-0.5\parskip}{0pt}
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.5pt]}]
 \usepackage{parskip} % disables indentation
 \usepackage{enumitem}
-\setlist[description]{leftmargin=*} % disables indentation for lists
+% disables indentation for lists
+\setlist[description]{leftmargin=*,nolistsep}
 \setlist[itemize]{leftmargin=*}
+\usepackage{multicol}
+\setlength{\multicolsep}{0pt}
 \usepackage[none]{hyphenat} % disables splitting words
 \usepackage{attachfile} % attaches source code
 \usepackage{fancyhdr} % headings and footers
 \renewcommand{\footrulewidth}{0.4pt}
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[L]{\huge August Valera}
+\fancyhead[L]{\Huge \textbf{August Valera}}
 \fancyhead[R]{
-   \small
-   \url{avalera@ucsc.edu} --- +1 (616) 284-1018 \\
-   1010 Pacific Ave. \# 218, Santa Cruz, CA 95060 \\
-   \url{http://linkedin.com/in/AugustValera}
+  \small
+  \href{mailto:avalera@ucsc.edu}{avalera@ucsc.edu} --- +1 (616) 284-1018 \\
+  1010 Pacific Ave. Apt. \# 218 --- Santa Cruz, CA 95060 \\
+  \href{https://linkedin.com/in/AugustValera}{LinkedIn/AugustValera} ---
+  \href{https://github.com/4U6U57}{GitHub/4U6U57}
 }
 \fancyfoot[L]{
-   \small Compiled \textit{\today} with {\LaTeX}, latest at
-   \url{http://github.com/4U6U57/resume/releases/latest}
+  \small Compiled \textit{\today} with \LaTeX
+}
+\fancyfoot[R]{
+  \small Latest at
+  \href{https://github.com/4U6U57/resume/releases/latest}
+  {github.com/4U6U57/resume}
 }
 \usepackage[yyyymmdd]{datetime} % date for footer in ISO
 \renewcommand{\dateseparator}{--}
@@ -42,94 +51,98 @@
 
 \pagenumbering{gobble}
 
-% Commented out for career fair
-%\section*{Objective}
-%To obtain an intership and gain working experience while pursuing a degree in
-%Computer Engineering at UC Santa Cruz.
-
 \section*{Education}
 \begin{description}
-   \itemsep0pt \parskip0pt
-   \item[High School Graduate] at Westmoor High School in Daly City, CA
-   \item[BS, Computer Engineering] at University of California,
-      Santa Cruz --- \textit{anticipated June 2017}
-   \item[GPA] of 3.59 --- \textit{as of Spring 2016 quarter}
+  \item[High School Graduate] at Westmoor High School in Daly City, CA
+  \item[BS, Computer Engineering] at University of California,
+    Santa Cruz --- \textit{anticipated June 2017}
+  \item[GPA] of 3.62 --- \textit{cumulative as of Fall '16 quarter}
 \end{description}
 
 \section*{Relevant Coursework}
 \begin{description}
-   \itemsep0pt \parskip0pt
+    \begin{multicols}{2}
       %\item[CMPE 13/L] Computer Systems and C Programming
-   \item[CMPE 150] Computer Networking
+    \item[CMPE 150] Computer Networking (bash, Java)
+    \item[CMPE 156] Network Programming (bash, C)
       %\item[CMPS 101] Abstract Data Types
-   \item[CMPS 102] Advanced Algorithm Analysis
-   \item[CMPS 111] Operating Systems
-   \item[CMPS 121] Mobile Applications (Android)
+    \item[CMPS 102] Algorithm Analysis
+    \item[CMPS 111] Operating Systems (Free BSD)
+    \item[CMPS 115] Software Engineering (Scrum)
+    \item[CMPS 121] Mobile Applications (Android)
+    \item[CMPS 185] Web Applications (web2py, vue.js)
+    \end{multicols}
 \end{description}
 
 \section*{Skills}
 \begin{description}
-   \itemsep0pt \parskip0pt
-   \item[Languages] Proficient: \{C, Java, Bash, LaTeX, Python\},
-      Familiar: \{JavaScript, MATLAB, Perl\}
-   \item[Fields] Shell Scripting \{csh, Bash\}, Android App Development, Web
-      Design \{AngularJS, Bootstrap, Firebase, web2py\}
-   \item[Tools] Cygwin, Git, Octave, Unix/Ubuntu, Vim, VirtualBox
+  \item[Languages] Proficient: \{C, Java, Bash, Python\},
+    Familiar: \{C++, JavaScript, MATLAB, Perl\}
+  \item[Fields] Shell Scripting \{csh, Bash\}, Android App Development, Web
+    Design \{AngularJS, Bootstrap, Firebase, web2py\}
+  \item[Tools] GitHub, Ubuntu, Vim, VirtualBox
 \end{description}
 
 \section*{Experience}
 \begin{description}
-   \itemsep0pt \parskip0pt
-   \item[Teaching Assistant (Undergraduate)] for CS Department, UCSC ---
-      \textit{April 2015--present}
-      \begin{itemize}
-         \itemsep0pt \parskip0pt
-         \item \textbf{Classes}: Intro Programming (Processing), Java
-            Programming, Data Structures (C/Java), Abstract Data Types, Algorithms
-         \item Independently lectured lab sections of up to $30$ students
-         \item Graded programming assignments, written homeworks and exams
-         \item Automated grading process with self-designed scripts (csh, Bash, C, Python)
-      \end{itemize}
-   \item[Hackathon Participant] HACK UCSC --- \textit{Jan 2016}
-      \begin{itemize}
-         \item Lead frontend engineer for designing webapp for a microcontroller
-            garden monitor
-         \item Frontend (AngularJS) and REST API (Firebase), server backend
-            (Python) uploading data
-            %\item Devpost of Project:
-            %\url{http://devpost.com/software/autonomous-garden-controller}
-      \end{itemize}
-   \item[Senior Design Project] Storefront --- \textit{Oct 2016} (in progress)
-      \begin{itemize}
-         \item User Interface developer for peer to peer sales webapp
-         \item Worked with web2py web server, frontend (HTML/CSS/JS) and
-            backend (Python), SQL database
-         \item Agile team management, GitHub collaboration, continuous
-            integration and deployment
-      \end{itemize}
+  \item[Teaching Assistant (Undergraduate)] for CS Department, UCSC ---
+    \textit{April 2015--present}
+    \begin{itemize}
+        \begin{multicols}{3}
+        \item Intro CS (Processing)
+        \item Java Programming
+        \item Data Structures (C/Java)
+        \item Abstract Data Types
+        \item Algorithm Analysis
+        \end{multicols}
+      \item Independently lectured lab sections of up to $30$ students
+      \item Graded up to $300$ students' programming assignments, written
+        homeworks and exams each quarter
+      \item Automated grading process with self-designed scripts (csh, Bash, C,
+        Python)
+    \end{itemize}
+\end{description}
+
+\section*{Projects}
+\begin{description}
+  \item[\href{https://github.com/4U6U57/hackucsc2016.autogarden}{Autonomous
+    Garden Project}] HACK UCSC --- \textit{2016}
+    \begin{itemize}
+      \item Lead frontend engineer of the web interface for microcontroller
+        garden monitor
+      \item Frontend (AngularJS) and REST API (Firebase), server backend
+        (Python) uploading data
+    \end{itemize}
+  \item[\href{https://github.com/Fence-UCSC/Storefront}{Storefront}]
+    Fence --- \textit{2016}
+    \begin{itemize}
+      \item UI/UX developer for proof of concept online sales webapp
+      \item Worked with web2py web server, frontend (HTML/CSS/JS) and backend
+        (Python), SQL database
+      \item Agile project management, GitHub collaboration, continuous
+        integration, deployment
+    \end{itemize}
 \end{description}
 
 \section*{Awards and Achievements}
 \begin{description}
-   \itemsep0pt \parskip0pt
-   \item[Dean's List] --- \textit{Fall 2013--Spring 2014, Spring 2015}
+  \item[Dean's List] --- \textit{Fall '13, Winter '14, Spring '14, Spring '15,
+    Spring '16, Fall '16}
 \end{description}
 
-\section*{Interests}
+\section*{Activities}
 \begin{description}
-   \itemsep0pt \parskip0pt
-   \item[Student Government] University of California, Santa Cruz
-      \begin{itemize}
-         \itemsep0pt \parskip0pt
-         \item \textbf{Elected Representative} at Student Union Assembly ---
-            \textit{2015--2016}
-         \item \textbf{Senator} at Crown Student Senate --- \textit{2013--present}
-      \end{itemize}
-   \item[Organizations] Misc. Affiliations
-      \begin{itemize}
-         \item \textbf{Member} of Association of Computing Machinery (ACM)
-         \item \textbf{Member} of Society of Asian Scientists and Engineers (SASE)
-      \end{itemize}
+  \item[Student Government] University of California, Santa Cruz
+    \begin{itemize}
+      \item \textbf{Elected Representative} at Student Union Assembly ---
+        \textit{2015--2016}
+      \item \textbf{Senator} at Crown Student Senate --- \textit{2013--2017}
+    \end{itemize}
+  \item[Organizations] ~
+    \begin{itemize}
+      \item \textbf{Member} of Association of Computing Machinery (ACM)
+      \item \textbf{Member} of Society of Asian Scientists and Engineers (SASE)
+    \end{itemize}
 \end{description}
 
 \end{document}
