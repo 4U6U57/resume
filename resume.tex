@@ -7,19 +7,20 @@
 \geometry{
   letterpaper,
   margin=1in,
-  tmargin=1.3in,
-  headsep=0.2in,
+  tmargin=1.2in,
+  headsep=0.1in,
   headheight=1in,
+  footskip=-0.35in
 }
 \usepackage{titlesec} % disables break after section titles
-\titlespacing{\section}{0pt}{-0.5\parskip}{0pt}
+\titlespacing{\section}{0pt}{-0.7\parskip}{0pt}
 \titleformat{\section}
 {\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.5pt]}]
 \usepackage{parskip} % disables indentation
 \usepackage{enumitem}
 % disables indentation for lists
 \setlist[description]{leftmargin=*,nolistsep}
-\setlist[itemize]{leftmargin=*}
+\setlist[itemize]{leftmargin=*,nolistsep}
 \usepackage{multicol}
 \setlength{\multicolsep}{0pt}
 \usepackage[none]{hyphenat} % disables splitting words
@@ -37,12 +38,12 @@
   \href{https://github.com/4U6U57}{GitHub/4U6U57}
 }
 \fancyfoot[L]{
-  \small Compiled \textit{\today} with \LaTeX
+  \small Compiled with \LaTeX on\ \textit{\today}
 }
 \fancyfoot[R]{
   \small Latest at
   \href{https://github.com/4U6U57/resume/releases/latest}
-  {github.com/4U6U57/resume}
+  {GitHub.com/4U6U57/resume}
 }
 \usepackage[yyyymmdd]{datetime} % date for footer in ISO
 \renewcommand{\dateseparator}{--}
@@ -54,25 +55,27 @@
 \section*{Education}
 \begin{description}
   \item[High School Graduate] at Westmoor High School in Daly City, CA
-  \item[BS, Computer Engineering] at University of California,
-    Santa Cruz --- \textit{anticipated June 2017}
+  \item[Bachelor of Science in Computer Engineering] at University of
+    California, Santa Cruz \\ --- \textit{anticipated June 2017}
   \item[GPA] of 3.62 --- \textit{cumulative as of Fall '16 quarter}
 \end{description}
 
 \section*{Relevant Coursework}
-\begin{description}
+\begin{itemize}
     \begin{multicols}{2}
-      %\item[CMPE 13/L] Computer Systems and C Programming
-    \item[CMPE 150] Computer Networking (bash, Java)
-    \item[CMPE 156] Network Programming (bash, C)
-      %\item[CMPS 101] Abstract Data Types
-    \item[CMPS 102] Algorithm Analysis
-    \item[CMPS 111] Operating Systems (Free BSD)
-    \item[CMPS 115] Software Engineering (Scrum)
-    \item[CMPS 121] Mobile Applications (Android)
-    \item[CMPS 185] Web Applications (web2py, vue.js)
+      % \item C Programming % CMPE 13/L
+      % \item CE Senior Project % CMPE 129A/B/C
+    \item Computer Networking (bash, Java) % CMPE 150
+    \item Network Programming (bash, C) % CMPE 156
+      % \item Abstract Data Types % CMPS 101
+    \item Algorithm Analysis % CMPS 102
+    \item Operating Systems (C, FreeBSD) % CMPS 111
+    \item Software Engineering (Scrum) % CMPS 115
+      % \item CS Senior Project % CMPS 116/117
+    \item Mobile Applications (Android) % CMPS 121
+    \item Web Applications (web2py, vue.js) % CMPS 185
     \end{multicols}
-\end{description}
+\end{itemize}
 
 \section*{Skills}
 \begin{description}
@@ -80,7 +83,7 @@
     Familiar: \{C++, JavaScript, MATLAB, Perl\}
   \item[Fields] Shell Scripting \{csh, Bash\}, Android App Development, Web
     Design \{AngularJS, Bootstrap, Firebase, web2py\}
-  \item[Tools] GitHub, Ubuntu, Vim, VirtualBox
+  \item[Tools] GitHub, TravisCI, Ubuntu, Vim, VirtualBox
 \end{description}
 
 \section*{Experience}
@@ -128,6 +131,7 @@
 \begin{description}
   \item[Dean's List] --- \textit{Fall '13, Winter '14, Spring '14, Spring '15,
     Spring '16, Fall '16}
+\item[Volunteer Service Award] Merrill Student Government --- \textit{2016}
 \end{description}
 
 \section*{Activities}
