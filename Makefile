@@ -8,7 +8,7 @@ all: ${OUTPUT}
 	pdflatex -interaction=nonstopmode -halt-on-error $<
 	pdflatex -interaction=nonstopmode -halt-on-error $<
 
-clean: 
+clean:
 	rm -f ${OBJECT}
 
 spotless: clean
