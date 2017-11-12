@@ -3,6 +3,10 @@
 
 \usepackage{comment}
 \usepackage{fullpage, hyperref}
+\usepackage{xcolor,fontawesome}
+\let\orighref\href
+\renewcommand{\href}[2]{\orighref{#1}{#2{\scriptsize~\color{darkgray}\faExternalLink}}}
+\renewcommand{\url}[1]{\href{#1}{#1}}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{geometry} % sets size
 \geometry{
