@@ -7,6 +7,7 @@ image: blang/latex
 build:
   only:
     - master
+    - dev
   script:
     - make build
   artifacts:

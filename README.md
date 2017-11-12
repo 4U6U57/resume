@@ -6,5 +6,7 @@ CI*.
 
 ## Releases
 
-Get the latest version as a PDF on [GitLab
-releases](https://gitlab.com/4U6U57/resume/builds/artifacts/master/file/resume.pdf?job=build)
+Download my resume as a PDF via GitLab releases:
+
+- [**Latest stable version (*master*)**](https://gitlab.com/4U6U57/resume/builds/artifacts/master/file/resume.pdf?job=build)
+- [Latest development version (*dev*)](https://gitlab.com/4U6U57/resume/builds/artifacts/dev/file/resume.pdf?job=build)
