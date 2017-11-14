@@ -14,8 +14,7 @@ spotless: clean
 
 # Export for Bash for Windows
 # TODO: Make this cleaner
-win: all
+win: all clean
 	mv *.pdf /mnt/c/Users/4u6u5/Desktop
-	make spotless
 
 .PHONY: all build clean spotless win
