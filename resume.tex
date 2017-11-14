@@ -3,6 +3,10 @@
 
 \usepackage{comment}
 \usepackage{fullpage, hyperref}
+\usepackage{xcolor,fontawesome}
+\let\orighref\href
+\renewcommand{\href}[2]{\orighref{#1}{#2{\scriptsize~\color{darkgray}\faExternalLink}}}
+\renewcommand{\url}[1]{\href{#1}{#1}}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{geometry} % sets size
 \geometry{
@@ -11,7 +15,7 @@
   tmargin=1.2in,
   headsep=0.1in,
   headheight=1in,
-  footskip=-0.35in
+  footskip=-0.15in
 }
 \usepackage{titlesec} % disables break after section titles
 \titlespacing{\section}{0pt}{-0.7\parskip}{0pt}
@@ -39,10 +43,10 @@
   \href{https://github.com/4U6U57}{GitHub/4U6U57}
 }
 \fancyfoot[L]{
-  \small Compiled with \LaTeX\ on\ \textit{\today}
+  \scriptsize Compiled with \LaTeX\ on\ \textit{\today}
 }
 \fancyfoot[R]{
-  \small Latest at
+  \scriptsize Latest at
   \href{https://gitlab.com/4U6U57/resume/builds/artifacts/master/file/resume.pdf?job=build}
   {GitLab.com/4U6U57/resume}
 }
@@ -93,25 +97,6 @@
 
 \section*{Projects}
 \begin{description}
-  \item[\href{https://github.com/4U6U57/otterhacks17.otterbeactive}{Otter Be
-    Active}] Domain.com category winner at Otter Hacks --- \textit{2017}
-    \begin{itemize}
-      \item Frontend Developer for mobile and web app for locating nearby
-        parks/POI
-        users to be more active
-      \item Apache Cordova and NodeJS for multiplatform application, Google Maps
-        Distance Vector API for places
-      \item Made in under 36 hours with no prior Cordova experience, demo:
-        \url{https://otterbeactive.com}
-    \end{itemize}
-  \item[\href{https://github.com/4U6U57/uberhacks17.convoy}{Convoy}] Third
-    Place Winner at UBER Hacks --- \textit{2017}
-    \begin{itemize}
-      \item Backend Developer for SMS service facilitating group reservation of
-        multiple UBER vehicles optimizing cost
-      \item Frontend (Twilio) and REST API (ExpressJS and AngularJS),
-        incorporating UBER and Google Maps APIs
-    \end{itemize}
   \item[\href{https://github.com/grepthink/grepthink}{GrepThink}] Computer
     Science Senior Project --- \textit{January 2017--June 2017}
     \begin{itemize}
@@ -122,8 +107,36 @@
       \item Deployed for use with the UCSC Software Engineering class, Summer
         2017, demo: \url{https://grepthink.com}
     \end{itemize}
+  \item[\href{https://github.com/HaHaSDP-UCSC}{Help Alert Home Assistance
+    Button}] Senior Design Project -- \textit{2017}
+    \begin{itemize}
+      \item User Experience Developer for open source senior citizen emergency
+        alert button
+      \item Wrote user interface and display logic/drivers for base station's
+        embedded system
+    \end{itemize}
 \end{description}
 \begin{comment}
+\item[\href{https://github.com/4U6U57/otterhacks17.otterbeactive}{Otter Be
+  Active}] Domain.com category winner at Otter Hacks --- \textit{2017}
+  \begin{itemize}
+    \item Frontend Developer for mobile and web app for locating nearby
+      parks/POI
+      users to be more active
+    \item Apache Cordova and NodeJS for multiplatform application, Google Maps
+      Distance Vector API for places
+    \item Made in under 36 hours with no prior Cordova experience, demo:
+      \url{https://otterbeactive.com}
+  \end{itemize}
+\item[\href{https://github.com/4U6U57/uberhacks17.convoy}{Convoy}] Third
+  Place Winner at UBER Hacks --- \textit{2017}
+  \begin{itemize}
+    \item Backend Developer for SMS service facilitating group reservation of
+      multiple UBER vehicles optimizing cost
+    \item Frontend (Twilio) and REST API (ExpressJS and AngularJS),
+      incorporating UBER and Google Maps APIs
+  \end{itemize}
+
 \item[\href{https://github.com/4U6U57/hackucsc16.autogarden}{Autonomous
   Garden Project}]
   HACK UCSC --- \textit{2016}
@@ -132,14 +145,6 @@
       microcontroller garden monitor
     \item Webapp frontend (AngularJS) and backend (Firebase), server backend
       (Python) uploading data from uC
-  \end{itemize}
-\item[\href{https://github.com/HaHaSDP-UCSC}{Help Alert Home Assistance
-  Button}] Senior Design Project -- \textit{2017}
-  \begin{itemize}
-    \item User Experience Developer for open source senior citizen emergency
-      alert button
-    \item Wrote user interface and display logic/drivers for base station's
-      embedded system
   \end{itemize}
 \item[\href{https://github.com/Fence-UCSC/Storefront}{Storefront}] Fence ---
   \textit{2016}
@@ -154,8 +159,8 @@
 
 \section*{Experience}
 \begin{description}
-  \item[Teaching Assistant (Undergraduate)]
-    Computer Science Department, UC Santa Cruz --- \textit{April 2015--June 2017}
+  \item[\href{https://gitlab.com/4U6U57/grading}{Teaching Assistant (Undergraduate)}]
+    Computer Science Dept., UC Santa Cruz --- \textit{April 2015--June 2017}
     \begin{itemize}
       \begin{multicols}{3}
       \item Intro CS (Processing)
@@ -170,6 +175,25 @@
     \item Automated grading process with self-designed scripts (csh, Bash, C,
       Python)
   \end{itemize}
+\item[\href{https://gitlab.com/4U6U57/hackathons}{Hackathon Participant}] Major
+  League Hacking (MLH) --- \textit{2015--2017}
+  \begin{itemize}
+    \begin{multicols}{2}
+    \item
+      \href{https://gitlab.com/4U6U57/hackucsc16.autogarden}{HACK UCSC} --- \textit{2016}
+    \item \href{https://gitlab.com/4U6U57/hackucsc17.rackin}{HACK UCSC} --- \textit{2017}
+    \item \href{https://gitlab.com/4U6U57/uberhacks17.convoy}{UBER Hacks, 3rd
+      Place} --- \textit{2017}
+    \item \href{https://gitlab.com/4U6U57/sfhacks17.catchthesehands}{SF Hacks,
+      2nd Place in Hardware} -- \textit{2017}
+    \item
+      \href{https://gitlab.com/4U6U57/otterhacks17.otterbeactive}{Otter Hacks,
+      Domains.com winner}
+      --- \textit{2017}
+    \item \href{https://gitlab.com/4U6U57/siliconhacks17.adjustgov}{Silicon
+      Hacks, Make School winner} --- \textit{2017}
+    \end{multicols}
+\end{itemize}
 \end{description}
 
 \section*{Awards and Achievements}
@@ -177,7 +201,7 @@
   \item[Dean's List] UC Santa Cruz --- 8 out of 12 quarters attended
     %: \\ \textit{Fall '13, Winter '14, Spring '14, Spring '15, Spring '16, Fall '16, Winter '17, Spring '17}
     %\item[Volunteer Service Award] Merrill Student Government --- \textit{2016}
-  \item[Terence Freitas College Service Award] Crown College Graduating Class --- \textit{2017}
+    %\item[Terence Freitas College Service Award] Crown College Graduating Class --- \textit{2017}
 \end{description}
 
 \section*{Activities}
@@ -190,20 +214,21 @@
   \item[Engineering Organizations] ~
     \begin{itemize}
       \item \textbf{Amateur Radio Operator, Technician Class (K6AUG)} UCSC Amateur Radio Club (W6SLG)
-      \item \textbf{Member} Association of Computing Machinery (ACM)
+        %\item \textbf{Member} Association of Computing Machinery (ACM)
       \item \textbf{Member} Society of Asian Scientists and Engineers (SASE)
     \end{itemize}
+  \item[Volunteering] ~
+    \begin{itemize}
+      \item \textbf{Marketing Communications Chairperson}
+        \href{http://SFFilAmLions.org}{San Francisco Fil-Am Lions Club} --- \textit{2015--present}
+        %\item \textbf{Attendee Safety Staff (Rovers Dept.)} FanimeCon, San Jose ---
+        %  \textit{2013--present}
+        %\item \textbf{Associate Member}
+        %  Silicon Valley Cyber Lions Club --- \textit{2016--present}
+    \end{itemize}
+
 \end{description}
 \begin{comment}
-\item[Volunteering] ~
-  \begin{itemize}
-    \item \textbf{Marketing Communications Chairperson}
-      San Francisco Fil-Am Lions Club --- \textit{2015--present}
-    \item \textbf{Attendee Safety Staff (Rovers Dept.)} FanimeCon, San Jose ---
-      \textit{2013--present}
-      %\item \textbf{Associate Member}
-      %  Silicon Valley Cyber Lions Club --- \textit{2016--present}
-  \end{itemize}
 \item[Relevant Hobbies] ~
   \begin{itemize}
     \item \textbf{\href{https://coord.info/PR62PFW}{Geocaching (4U6U57)}} 350

@@ -7,10 +7,9 @@ image: blang/latex
 build:
   only:
     - master
+    - dev
   script:
-    - latexmk -pdf
-    - git remote add upstream https://git.overleaf.com/8394985fqbcmtszhnwh
-    - git push -f upstream master
+    - make build
   artifacts:
     paths:
       - "*.pdf"
