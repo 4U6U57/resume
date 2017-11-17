@@ -16,5 +16,6 @@ spotless: clean
 # TODO: Make this cleaner
 win: all clean
 	mv *.pdf /mnt/c/Users/4u6u5/Desktop
+	/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe "C:\Users\4u6u5\Desktop\resume.pdf"
 
 .PHONY: all build clean spotless win
