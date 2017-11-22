@@ -14,8 +14,16 @@ spotless: clean
 
 # Export for Bash for Windows
 # TODO: Make this cleaner
-win: all clean
-	mv *.pdf /mnt/c/Users/4u6u5/Desktop
-	/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe "C:\Users\4u6u5\Desktop\resume.pdf"
 
-.PHONY: all build clean spotless win
+open: all clean
+	# xdg-open, unless we're in Bash for Windows, then use Chrome
+	grep -q "Microsoft" /proc/sys/kernel/osrelease &>/dev/null &&\
+		(mv *.pdf /mnt/c/Users/4u6u5/Desktop &&\
+		/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe "C:\Users\4u6u5\Desktop\resume.pdf")\
+		|| xdg-open resume.pdf
+
+edit:
+	edit resume.tex
+	make open
+
+.PHONY: all build clean spotless open edit
