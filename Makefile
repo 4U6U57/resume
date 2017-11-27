@@ -12,9 +12,6 @@ clean:
 spotless: clean
 	latexmk -C
 
-# Export for Bash for Windows
-# TODO: Make this cleaner
-
 open: all clean
 	xdg-open resume.pdf
 
@@ -22,4 +19,10 @@ edit:
 	edit resume.tex
 	make open
 
-.PHONY: all build clean spotless open edit
+ci: build
+	git add -A :/
+	git commit -av
+	git push
+	git log --oneline --graph --all
+
+.PHONY: all build ci clean spotless open edit
