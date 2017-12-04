@@ -2,15 +2,17 @@
 # use docker image with latex preinstalled
 # since there is no official latex image, use https://github.com/blang/latex-docker
 # possible alternative: https://github.com/natlownes/docker-latex
-image: blang/latex
 
 test:
+  image: ubuntu:latest
   script:
+    - apt-get update -yqq
     - apt-get install -yqq npm
     - npm install
     - npm run lint:md
 
 build:
+  image: blang/latex
   only:
     - master
     - dev
