@@ -7,7 +7,7 @@ test:
   image: ubuntu:latest
   script:
     - apt-get update -yqq
-    - apt-get install -yqq npm
+    - apt-get install -yqq npm nodejs-legacy
     - npm install
     - npm run lint:md
 
@@ -21,3 +21,4 @@ build:
   artifacts:
     paths:
       - "*.pdf"
+  expire_in: 1 year
