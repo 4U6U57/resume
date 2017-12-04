@@ -4,6 +4,12 @@
 # possible alternative: https://github.com/natlownes/docker-latex
 image: blang/latex
 
+test:
+  script:
+    - apt-get install -yqq npm
+    - npm install
+    - npm run lint:md
+
 build:
   only:
     - master

@@ -1,0 +1,27 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "August Valera's resume",
+  "main": "resume.tex",
+  "scripts": {
+    "test": "for test in lint; do npm run $test; done",
+    "lint": "for lint in lint:md; do npm run $lint; done",
+    "lint:md": "markdownlint *.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/4U6U57/resume.git"
+  },
+  "keywords": [
+    "resume"
+  ],
+  "author": "August Valera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/4U6U57/resume/issues"
+  },
+  "homepage": "https://gitlab.com/4U6U57/resume#README",
+  "devDependencies": {
+    "markdownlint-cli": "^0.5.0"
+  }
+}
