@@ -1,11 +1,13 @@
 {
-  "name": "resume",
+  "name": "@4U6U57/resume",
   "version": "1.0.0",
   "description": "August Valera's resume",
   "main": "resume.tex",
   "scripts": {
-    "start": "npm run build && xdg-open *.pdf",
+    "start": "npm run build && npm run clean && xdg-open *.pdf",
     "build": "latexmk -pdf *.tex",
+    "clean": "latexmk -c",
+    "spotless": "latexmk -C",
     "test": "for test in lint; do npm run $test; done",
     "lint": "for lint in lint:md; do npm run $lint; done",
     "lint:md": "markdownlint *.md"
