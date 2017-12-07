@@ -2,14 +2,25 @@
 # use docker image with latex preinstalled
 # since there is no official latex image, use https://github.com/blang/latex-docker
 # possible alternative: https://github.com/natlownes/docker-latex
-image: blang/latex
+
+before_script:
+  - apt-get update -yqq
+  - apt-get install -yqq npm nodejs-legacy
+  - npm install
+
+test:
+  image: ubuntu:latest
+  script:
+    - npm run lint:md
 
 build:
+  image: blang/latex
   only:
     - master
     - dev
   script:
-    - make build
+    - npm run build
   artifacts:
     paths:
       - "*.pdf"
+    expire_in: 1 year
