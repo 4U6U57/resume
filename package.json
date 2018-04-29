@@ -8,9 +8,10 @@
     "build": "latexmk -pdf *.tex",
     "clean": "latexmk -c",
     "spotless": "latexmk -C",
-    "test": "for test in lint; do npm run $test; done",
-    "lint": "for lint in lint:md; do npm run $lint; done",
-    "lint:md": "markdownlint *.md"
+    "test": "for test in lint; do npm run $test || exit 1; done",
+    "lint": "for lint in md tex; do npm run lint:$lint || exit 1; done",
+    "lint:md": "markdownlint *.md",
+    "lint:tex": "chktex *.tex"
   },
   "repository": {
     "type": "git",
