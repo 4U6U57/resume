@@ -12,13 +12,13 @@ CI*.
 Download my resume as a PDF via GitLab releases:
 
 - [**Latest stable version \[*master*\]
-  (view)**](https://gitlab.com/4U6U57/resume/builds/artifacts/master/file/resume.pdf?job=build)
+  (view)**](https://gitlab.com/4U6U57/resume/builds/artifacts/master/file/resume.pdf?job=deploy)
   **/**
-  [**(download)**](https://gitlab.com/4U6U57/resume/builds/artifacts/master/raw/resume.pdf?job=build)
+  [**(download)**](https://gitlab.com/4U6U57/resume/builds/artifacts/master/raw/resume.pdf?job=deploy)
 - [Latest development version \[*develop*\]
-  (view)](https://gitlab.com/4U6U57/resume/builds/artifacts/develop/file/resume.pdf?job=build)
+  (view)](https://gitlab.com/4U6U57/resume/builds/artifacts/develop/file/resume.pdf?job=deploy)
   /
-  [(download)](https://gitlab.com/4U6U57/resume/builds/artifacts/develop/raw/resume.pdf?job=build)
+  [(download)](https://gitlab.com/4U6U57/resume/builds/artifacts/develop/raw/resume.pdf?job=deploy)
 
 ## Build
 
