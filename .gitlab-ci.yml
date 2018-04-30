@@ -3,26 +3,34 @@
 # since there is no official latex image, use https://github.com/blang/latex-docker
 # possible alternative: https://github.com/natlownes/docker-latex
 
+image: ubuntu:latest
+
 before_script:
   - apt update -yqq
   - apt install -yqq npm
   - npm install
 
-test:
-  stage: test
-  image: ubuntu:latest
-  script:
-    - apt install -yqq chktex
-    - npm test
-
-deploy:
-  stage: deploy
+build:
+  stage: build
   image: blang/latex
   only:
     - master
     - develop
   script:
     - npm run build
+
+test:
+  stage: test
+  script:
+    - apt install -yqq chktex
+    - npm test
+
+deploy:
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - echo "Deploying"
   artifacts:
     paths:
       - "*.pdf"
