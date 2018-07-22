@@ -4,20 +4,23 @@
 # possible alternative: https://github.com/natlownes/docker-latex
 
 before_script:
-  - apt-get update -yqq
-  - apt-get install -yqq npm nodejs-legacy
+  - apt update -yqq
+  - apt install -yqq npm
   - npm install
 
 test:
+  stage: test
   image: ubuntu:latest
   script:
-    - npm run lint:md
+    - apt install -yqq chktex
+    - npm test
 
-build:
+deploy:
+  stage: deploy
   image: blang/latex
   only:
     - master
-    - dev
+    - develop
   script:
     - npm run build
   artifacts:
