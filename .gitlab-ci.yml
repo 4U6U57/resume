@@ -26,4 +26,4 @@ deploy:
   artifacts:
     paths:
       - "*.pdf"
-    expire_in: 1 year
+    expire_in: 2 years
