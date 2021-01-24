@@ -33,14 +33,13 @@ deploy:
   image: blang/latex
   only:
     - master
-    - develop
+    - next
   script:
     - *before_npm
     - npm run build
   artifacts:
     paths:
       - "*.pdf"
-    expire_in: 1 year
 
 publish:
   stage: release
