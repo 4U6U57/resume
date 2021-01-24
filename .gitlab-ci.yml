@@ -7,15 +7,19 @@ stages:
   - test
   - release
 
-before_script:
-  - apt update -yqq
-  - apt install -yqq npm
-  - npm install
+.before_npm: &before_npm
+  - apt-get update -yqq
+  - apt-get install -yqq build-essential curl default-jdk
+  - curl -sL https://deb.nodesource.com/setup_10.x | bash -
+  - apt-get install -yqq nodejs
+  - npm --version
+  - npm install --unsafe-perm=true
 
 test:
   stage: test
   image: ubuntu:bionic
   script:
+    - *before_npm
     - apt install -yqq chktex
     - npm test
 
@@ -26,6 +30,7 @@ deploy:
     - master
     - develop
   script:
+    - *before_npm
     - npm run build
   artifacts:
     paths:
@@ -36,5 +41,5 @@ publish:
   stage: release
   image: node:12
   script:
+    - *before_npm
     - npx semantic-release
-
