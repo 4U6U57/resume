@@ -3,27 +3,48 @@
 # since there is no official latex image, use https://github.com/blang/latex-docker
 # possible alternative: https://github.com/natlownes/docker-latex
 
-before_script:
-  - apt update -yqq
-  - apt install -yqq npm
-  - npm install
+stages:
+  - test
+  - release
+
+include:
+  - template: Code-Quality.gitlab-ci.yml
+  - template: Dependency-Scanning.gitlab-ci.yml
+  - template: License-Scanning.gitlab-ci.yml
+
+.before_npm: &before_npm
+  - apt-get update -yqq
+  - apt-get install -yqq build-essential curl default-jdk
+  - curl -sL https://deb.nodesource.com/setup_10.x | bash -
+  - apt-get install -yqq nodejs
+  - npm --version
+  - npm install --unsafe-perm=true
 
 test:
   stage: test
-  image: ubuntu:latest
+  image: ubuntu:bionic
   script:
+    - *before_npm
     - apt install -yqq chktex
     - npm test
 
 deploy:
-  stage: deploy
+  stage: release
   image: blang/latex
   only:
     - master
     - develop
   script:
+    - *before_npm
     - npm run build
   artifacts:
     paths:
       - "*.pdf"
     expire_in: 1 year
+
+publish:
+  stage: release
+  image: node:12
+  script:
+    - *before_npm
+    - npx semantic-release
