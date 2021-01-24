@@ -3,6 +3,10 @@
 # since there is no official latex image, use https://github.com/blang/latex-docker
 # possible alternative: https://github.com/natlownes/docker-latex
 
+stages:
+  - test
+  - release
+
 before_script:
   - apt update -yqq
   - apt install -yqq npm
@@ -10,13 +14,13 @@ before_script:
 
 test:
   stage: test
-  image: ubuntu:latest
+  image: ubuntu:bionic
   script:
     - apt install -yqq chktex
     - npm test
 
 deploy:
-  stage: deploy
+  stage: release
   image: blang/latex
   only:
     - master
@@ -27,3 +31,10 @@ deploy:
     paths:
       - "*.pdf"
     expire_in: 1 year
+
+publish:
+  stage: release
+  image: node:12
+  script:
+    - npx semantic-release
+
